@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/login.css" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Login</title>
+</head>
+<body>
+  <div class="contenedor">
+    <main>
+      <form action="#">
+        <legend>OpenBootcamp <span>| Alumnos</span></legend>
+        
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required placeholder="Introduce tu correo">
+        
+        <label for="password">Contraseña</label>
+        <input type="password" name="password" id="password" required placeholder="Introduce tu contraseña">
+        
+        <div class="check-password">
+          <div class="check-label">
+            <input type="checkbox" name="check" id="check">
+            <label for="check">Recuérdame</label>
+          </div>
+          <a href="#">He olvidado la contraseña</a>
+        </div>        
+
+        <input type="submit" name="login-button" id="login-button" class="login-button" value="Iniciar Sesión">
+      </form>
+    </main>
+    <footer>
+      <p>Copyright &copy; 2021 Open Bootcamp SL, Imagina Group</p>
+      <p>Todos los derechos reservados.</p>
+      <p><a href="#">Política de Privacidad</a></p>
+    </footer>
+  </div>
+</body>
+</html>
