@@ -168,3 +168,29 @@ footer a:visited {
 footer a:hover {
   color: #121625;
 }
+
+@media only screen and (max-width: 600px) {
+
+  body {
+    background: none;
+  }
+
+  .contenedor {
+    width: 100%;    
+  }
+
+  main,
+  footer {
+    width: 80%;
+  }
+
+  .check-password {
+    flex-direction: column;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  .check-label {
+    margin-bottom: 10px;
+  }
+}
