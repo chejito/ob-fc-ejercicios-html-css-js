@@ -1,0 +1,72 @@
+html, 
+body {
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: #F8F8F9;
+}
+
+header {
+  border: 1px solid orange;
+  height: 70px;
+}
+
+main {
+  border: 1px solid slateblue;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 40px 62px 0 62px;
+  padding: 0 40px;
+}
+
+section {
+  border: 1px solid purple;
+  min-width: 1346px;
+  height: 100%;
+  margin-right: 40px;
+}
+
+.students-header {
+  border: 1px solid red;
+  height: 40px;
+  margin-bottom: 16px;
+}
+
+form,
+table {
+  background: #fff;
+  border-radius: 20px;
+}
+
+table {
+  width: 100%;
+  border: 1px solid green;
+  min-height: 712px;
+}
+
+th {
+  text-align: start;
+  text-transform: uppercase;
+  height: 40px;
+}
+
+tr,
+tfoot {
+  height: 56px;
+}
+
+tfoot:first-child {
+  text-align: start;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid blue;
+  margin-bottom: 143px;
+  width: 100%;
+}
