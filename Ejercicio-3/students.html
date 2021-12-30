@@ -5,28 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tabla de Estudiantes</title>
   <link rel="stylesheet" href="css/students.css" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header></header>
+  <header>
+    <div class="company">
+      <p>OpenBootcamp <span>| Alumnos</span></p>
+    </div>
+    <div class="username">
+      <p>UserName</p>
+    </div>
+  </header>
   <main>
     <section>
-      <div class="students-header"></div>
+      <div class="students-header">
+        <label>Alumnos
+          <input type="text" name="search" id="search" placeholder="Buscar por Nombre, Email o Palabra clave...">
+        </label>
+      </div>
       <table>
         <thead>
           <tr>
-            <th>nombre</th>
-            <th>ciudad</th>
-            <th>país</th>
-            <th>teléfono</th>
-            <th>correo electrónico</th>
-            <th>etiquetas</th>
+            <th class="col-1">nombre</th>
+            <th class="col-2">ciudad</th>
+            <th class="col-3">país</th>
+            <th class="col-4">teléfono</th>
+            <th class="col-5">correo electrónico</th>
+            <th class="col-6">etiquetas</th>
           </tr>
         </thead>
         <tbody></tbody>
-        <tfoot>
-          <td></td>
-          <td colspan="5"></td>
-        </tfoot>
+        <tfoot></tfoot>
       </table>
     </section>
     <form>

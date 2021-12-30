@@ -1,17 +1,51 @@
+:root {
+  --main-bg-color: #f8f8f9;
+  --secondary-bg-color: #fff;
+  --primary-color: #32d4a4;
+  --primary-font-color: #121625;
+  --secondary-font-color: #a5a8b3;
+  --section-border-color: #E6E6EA;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 html, 
 body {
   margin: 0;
 }
 
 body {
+  width: 1920px;
+  height: 900px;
   display: flex;
   flex-direction: column;
-  background: #F8F8F9;
+  background: var(--main-bg-color);
+  font-family: 'Raleway', sans-serif;
+  color: var(--primary-font-color);
 }
 
 header {
+  display: flex;
+  width: 100%;
   border: 1px solid orange;
   height: 70px;
+  color: #121625;
+  font-weight: 400;
+  font-size: 24px;
+  padding: 24px 40px 18px;
+  justify-content: space-between;
+}
+
+header p {
+  padding: 0;
+  margin: 0;
+} 
+
+header span {
+  font-weight: 800;
+  color: var(--primary-color);
 }
 
 main {
@@ -36,19 +70,50 @@ section {
   margin-bottom: 16px;
 }
 
+
+
 form,
 table {
-  background: #fff;
+  background: var(--secondary-bg-color);
+  border: 1px solid var(--section-border-color);
   border-radius: 20px;
 }
 
 table {
-  width: 100%;
-  border: 1px solid green;
+  width: 100%; 
   min-height: 712px;
+  padding: 0;
+}
+
+.col-1 {
+  width: 256px;
+  margin: 0 20px;
+  padding: 0 24px; 
+}
+
+.col-2,
+.col-3,
+.col-4,
+.col-5  {
+  width: 158px;
+  margin-right: 20px;
+}
+
+.col-6 {
+  width: 230px;
+  margin-right: 80px;
+}
+
+tbody .col-6 span {
+  display: inline-block;
+  color: var(--secondary-bg-color);
+  background: var(--primary-color);
 }
 
 th {
+  color: var(--secondary-font-color);
+  font-size: 11px;
+  font-weight: 700;
   text-align: start;
   text-transform: uppercase;
   height: 40px;
@@ -59,14 +124,24 @@ tfoot {
   height: 56px;
 }
 
-tfoot:first-child {
+th,
+tbody tr {
+  border-bottom: 1px solid var(--section-border-color);
+}
+
+tfoot td:first-child {
   text-align: start;
 }
+
+tfoot td:nth-child(2) {
+  text-align: center;
+}
+
 
 form {
   display: flex;
   flex-direction: column;
-  border: 1px solid blue;
+  border: 1px solid var(--section-border-color);
   margin-bottom: 143px;
   width: 100%;
 }

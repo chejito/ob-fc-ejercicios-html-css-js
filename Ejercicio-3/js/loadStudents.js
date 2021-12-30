@@ -46,27 +46,67 @@ const students = [
     ['angular', 'html/css', 'react', 'js', 'node']
   ), 
    new Student(
-    'Amparo Herrera Climent',
-    'Sevilla',
+    'Antonio Delgado Jimeno',
+    'Gijón',
     'España',
-    '+34 689 25 48 65',
-    'hcliment@gmail.com',
-    ['html/css', 'angular']
+    '+34 925 65 54 25',
+    'djimeno@gmail.com',
+    ['html/css', 'react', 'angular']
   ), 
    new Student(
-    'Amparo Herrera Climent',
-    'Sevilla',
+    'Belén Jerez Rivera',
+    'Barcelona',
     'España',
-    '+34 689 25 48 65',
-    'hcliment@gmail.com',
-    ['html/css']
+    '+34 697 82 95 24',
+    'jrivera@gmail.com',
+    ['angular', 'html/css', 'react', 'js', 'node', 'python']
   ), 
    new Student(
-    'Amparo Herrera Climent',
-    'Sevilla',
+    'Carla Barroso Soriano',
+    'Valencia',
     'España',
-    '+34 689 25 48 65',
-    'hcliment@gmail.com',
+    '+34 958 65 41 54',
+    'bsoriano@gmail.com',
+    ['react', 'symfony', 'php', 'laravel', 'js', 'vue', 'html/css']
+  ), 
+   new Student(
+    'Carla Barroso Soriano',
+    'Valencia',
+    'España',
+    '+34 958 65 41 54',
+    'bsoriano@gmail.com',
+    []
+  ), 
+   new Student(
+    'Carla Barroso Soriano',
+    'Valencia',
+    'España',
+    '+34 958 65 41 54',
+    'bsoriano@gmail.com',
+    []
+  ), 
+   new Student(
+    'Carla Barroso Soriano',
+    'Valencia',
+    'España',
+    '+34 958 65 41 54',
+    'bsoriano@gmail.com',
+    []
+  ), 
+   new Student(
+    'Carla Barroso Soriano',
+    'Valencia',
+    'España',
+    '+34 958 65 41 54',
+    'bsoriano@gmail.com',
+    []
+  ), 
+   new Student(
+    'Carla Barroso Soriano',
+    'Valencia',
+    'España',
+    '+34 958 65 41 54',
+    'bsoriano@gmail.com',
     []
   )
 ]
@@ -89,12 +129,12 @@ students.forEach( x => {
   let newRow = tableBody.insertRow(tableBody.rows.length)
   newRow.innerHTML =
    `<tr>
-      <td>${x.fullName}</td>
-      <td>${x.city}</td>
-      <td>${x.country}</td>
-      <td>${x.phoneNumber}</td>
-      <td>${x.email}</td>
-      <td>${x.tags}</td>
+      <td class="col-1">${x.fullName}</td>
+      <td class="col-2">${x.city}</td>
+      <td class="col-3">${x.country}</td>
+      <td class="col-4">${x.phoneNumber}</td>
+      <td class="col-5">${x.email}</td>
+      <td class="col-6">${x.tags}</td>
     </tr>`
 
   tableBody.appendChild(newRow)
@@ -106,25 +146,25 @@ let studentsNumber = students.length
 if (studentsNumber < 12) {
   for (let i = studentsNumber; i < 12; i++) {
     let newRow = tableBody.insertRow(tableBody.rows.length)
-  newRow.innerHTML =
-   `<tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>`
+    newRow.innerHTML =
+    `<tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>`
 
-  tableBody.appendChild(newRow)
-  console.log("Alumno vacío añadido")
+    tableBody.appendChild(newRow)
+    console.log("Alumno vacío añadido")
   }
 
   let newFooter = tableFoot.insertRow()
   let numPages = Math.round(students.length / 12)
 
   newFooter.innerHTML = `<td>${students.length} alumnos en total</td>
-                        <td colspan="5"><span class="actual-page">1</span> de ${numPages}</td>`
+    <td colspan="5"><span class="actual-page">1</span> de ${numPages}</td>`
 
   tableFoot.appendChild(newFooter)
   console.log("Pie de tabla añadido")
