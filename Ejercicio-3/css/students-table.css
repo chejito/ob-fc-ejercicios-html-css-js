@@ -38,6 +38,7 @@ body {
   color: var(--primary-font-color);
   font-size: 15px;
   font-weight: 500;
+  font-feature-settings: 'pnum' on, 'lnum' on;
 }
 
 /* Esconder scrollbar en Chrome, Safari y Opera */
