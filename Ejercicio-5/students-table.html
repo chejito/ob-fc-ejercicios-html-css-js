@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla de Estudiantes</title>
+  <link rel="stylesheet" href="css/students-table.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" 
+  rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" 
+  rel="stylesheet">
+</head>
+<body>
+    <div class="search-bar">
+      <div class="search-container">
+        <label for="search-field" class="search-students">Alumnos</label>
+        <div class="search-field">
+          <span class="material-icons">search</span>
+          <input name="search-field" type="text" placeholder="Buscar por Nombre, 
+          Email o Palabra clave...">
+        </div>
+      </div>
+      <div class="add-student-button"><span class="material-icons">add</span>
+        <span>Añadir alumnos</span></div>
+    </div>
+    <div class="table">
+      <div class="table-header row">
+        <div class="col-1 sortable" onclick="sortByName()">
+          nombre
+          <span class="material-icons">sync_alt</span>
+        </div>
+        <div class="col-2 sortable" onclick="sortByCity()">
+          ciudad
+          <span class="material-icons">sync_alt</span>
+        </div>
+        <div class="col-3 sortable" onclick="sortByCountry()">
+          país
+          <span class="material-icons">sync_alt</span>
+        </div>
+        <div class="col-4">
+          teléfono
+        </div>
+        <div class="col-5 sortable" onclick="sortByEmail()">
+          correo electrónico
+          <span class="material-icons">sync_alt</span>
+        </div>
+        <div class="col-6 sortable" onclick="sortByTags()">
+          etiquetas
+          <span class="material-icons">sync_alt</span>
+        </div>
+      </div>
+      <div class="table-rows"></div>
+    </div>  
+  <script src="js/loadStudents.js"></script>
+</body>
+</html>
