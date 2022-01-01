@@ -74,19 +74,18 @@ body {
 
 .search-field {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   height: 40px;
   width: 343px;  
   background: var(--border-color);  
   font-size: 14px;
   font-weight: 500;
-  padding: 0 15px;
+  padding: 0;
 }
 
 .search-field .material-icons {
-  vertical-align: middle;
-  transform: scaleY(0.75) scaleX(0.75)
+  padding: 15px;  
+  font-size: 16px;
 }
 
 .search-field,
@@ -96,9 +95,14 @@ body {
   border: none;
 }
 
-.search-field input {
+.search-input {
   width: 283px;
+  height: 40px;
   background: var(--border-color);
+}
+
+.search-input:focus {
+  outline: none;
 }
 
 .add-student-button {
@@ -154,7 +158,7 @@ body {
   transform: scaleY(0.5) scaleX(0.5) rotate(-90deg);
 }
 
-.sortable {
+.clickable {
   cursor: pointer;
 }
 

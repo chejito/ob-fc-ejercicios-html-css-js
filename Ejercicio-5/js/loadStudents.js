@@ -141,7 +141,6 @@ let loadStudents = (studentsArray = students) => {
     <div class="row-cell col-6">${tags}</div>`
 
     tableBody.appendChild(newRow)
-    console.log("Alumno añadido")
   })
 
   if (studentsNumber < 12) {
@@ -157,7 +156,6 @@ let loadStudents = (studentsArray = students) => {
       <div class="row-cell col-6">&nbsp;</div>`
 
       tableBody.appendChild(newRow)
-      console.log("Alumno vacío añadido")
     }
   }
 
@@ -171,7 +169,6 @@ let loadStudents = (studentsArray = students) => {
     <div class="footer-cell col-1">&nbsp;</div>`
 
     tableBody.appendChild(newFooter)
-    console.log("Pie de tabla añadido")
 }
 
 const clearTable = () => {
@@ -264,6 +261,22 @@ const sortByTags = (array = students) => {
   array.sort(compareTags)
   clearTable()
   loadStudents(array)
+}
+
+const checkKeyWord = (student) => {
+  const keyWord = document.querySelector('.search-input').value.toLowerCase()
+
+  return student.fullName.toLowerCase().includes(keyWord) ||
+  student.email.toLowerCase().includes(keyWord) ||
+  student.city.toLowerCase().includes(keyWord)
+}
+
+const searchByKeywords = (array = students) => {
+  
+  const newArray = array.filter(checkKeyWord)
+
+  clearTable()
+  loadStudents(newArray)
 }
 
 loadStudents()
