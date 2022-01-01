@@ -154,6 +154,10 @@ body {
   transform: scaleY(0.5) scaleX(0.5) rotate(-90deg);
 }
 
+.sortable {
+  cursor: pointer;
+}
+
 .table-row {
   height: 56px;
 }

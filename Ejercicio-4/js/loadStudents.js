@@ -1,4 +1,4 @@
-const tableBody = document.querySelector('.table')
+const tableBody = document.querySelector('.table-rows')
 
 class Student {
   constructor(fullName, city, country, phoneNumber, email, tags) {
@@ -50,7 +50,7 @@ const students = [
     'España',
     '+34 925 65 54 25',
     'djimeno@gmail.com',
-    ['html&css', 'react', 'angular']
+    ['html&css']
   ), 
    new Student(
     'Belén Jerez Rivera',
@@ -83,25 +83,51 @@ const students = [
     'España',
     '+34 695 84 62 54',
     'plopez@gmail.com',
-    ['html&css', 'react', 'java', 'springboot']
+    []
+  ), 
+   new Student(
+    'Joaquín López Massani',
+    'Buenos Aires',
+    'Argentina',
+    '+54 9 11 1234-5678',
+    'lmassani@gmail.com',
+    ['html&css', 'javascript']
+  ), 
+   new Student(
+    'José Alberto López Martínez',
+    'Medellín',
+    'Colombia',
+    '+57 6045904614',
+    'lmartinez@gmail.com',
+    ['java', 'springboot', 'html&css', 'react', 'javascript']
+  ), 
+   new Student(
+    'Jéssica María Sánchez Montoya',
+    'Ciudad de México',
+    'México',
+    '+52 483 1212891',
+    'smontoya@gmail.com',
+    ['java', 'springboot', 'html&css', 'javascript']
   )
 ]
 
-let loadStudents = () => {
-  const studentsNumber = students.length
-  students.forEach( x => {
+let loadStudents = (studentsArray = students) => {
+  const studentsNumber = studentsArray.length
+  let tags = ''
+
+  studentsArray.forEach( x => {
     switch (x.tags.length) {
       case 0:
-        x.tags = '&nbsp;'
+        tags = '&nbsp;'
         break
       case 1:
-        x.tags = `<span>${x.tags[0]}</span>`
+        tags = `<span>${x.tags[0]}</span>`
         break
       case 2:
-        x.tags = `<span>${x.tags[0]}</span> <span>${x.tags[1]}</span>`
+        tags = `<span>${x.tags[0]}</span> <span>${x.tags[1]}</span>`
         break
       default:
-        x.tags = `<span>${x.tags[0]}</span> <span>${x.tags[1]}</span> <span>+${x.tags.length - 2}</span>`
+        tags = `<span>${x.tags[0]}</span> <span>${x.tags[1]}</span> <span>+${x.tags.length - 2}</span>`
     }
     
     let newRow = document.createElement('div')
@@ -112,7 +138,7 @@ let loadStudents = () => {
     <div class="row-cell col-3">${x.country}</div>
     <div class="row-cell col-4">${x.phoneNumber}</div>
     <div class="row-cell col-5">${x.email}</div>
-    <div class="row-cell col-6">${x.tags}</div>`
+    <div class="row-cell col-6">${tags}</div>`
 
     tableBody.appendChild(newRow)
     console.log("Alumno añadido")
@@ -137,15 +163,107 @@ let loadStudents = () => {
 
   let newFooter = document.createElement('div')
     newFooter.className = 'table-footer row'
-    let numPages = Math.round(students.length / 12)
+    let numPages = Math.round(studentsNumber / 12)
 
     newFooter.innerHTML = 
-    `<div class="footer-cell col-1 total-students">${students.length} alumnos en total</div>
+    `<div class="footer-cell col-1 total-students">${studentsNumber} alumnos en total</div>
     <div class="footer-cell col-x"><span class="actual-page">1</span> de <span class="number-of-pages">${numPages}</span> <span class="material-icons">chevron_right</span></div>
     <div class="footer-cell col-1">&nbsp;</div>`
 
     tableBody.appendChild(newFooter)
     console.log("Pie de tabla añadido")
-} 
+}
+
+const clearTable = () => {
+  tableBody.innerHTML = ''
+  // loadStudents([])
+}
+
+const compareName = (a, b) => {
+  if (a.fullName.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+   < b.fullName.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")) {
+    return -1
+  }
+  if (a.fullName > b.fullName) {
+    return 1
+  }
+  return 0
+}
+
+const compareCity = (a, b) => {
+  if (a.city.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    < b.city.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")) {
+    return -1
+  }
+  if (a.city.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    > b.city.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")) {
+    return 1
+  }
+  return 0
+}
+
+const compareCountry = (a, b) => {
+  if (a.country.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    < b.country.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")) {
+    return -1
+  }
+  if (a.country.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    > b.country.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")) {
+    return 1
+  }
+  return 0
+}
+
+const compareEmail = (a, b) => {
+  if (a.email.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") 
+    < b.email.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")) {
+    return -1
+  }
+  if (a.email.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") 
+    > b.email.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")) {
+    return 1
+  }
+  return 0
+}
+
+const compareTags = (a, b) => {
+  if (a.tags.length > b.tags.length) {
+    return -1
+  }
+  if (a.tags.length < b.tags.length) {
+    return 1
+  }
+  return 0
+}
+
+const sortByName = (array = students) => {
+  array.sort(compareName)
+  clearTable()
+  loadStudents(array)
+}
+
+const sortByCity = (array = students) => {
+  array.sort(compareCity)
+  clearTable()
+  loadStudents(array)
+}
+
+const sortByCountry = (array = students) => {
+  array.sort(compareCountry)
+  clearTable()
+  loadStudents(array)
+}
+
+const sortByEmail = (array = students) => {
+  array.sort(compareEmail)
+  clearTable()
+  loadStudents(array)
+}
+
+const sortByTags = (array = students) => {
+  array.sort(compareTags)
+  clearTable()
+  loadStudents(array)
+}
 
 loadStudents()
