@@ -1,9 +1,9 @@
 const student1 = {
-  'fullName': 'Amparo Herrera Climent',
-  'phoneNumber': '+34 654 85 52 48',
-  'email': 'hcliment@gmail.com',
+  'fullName': 'ITBunny Programmer',
+  'phoneNumber': '+34 567 890 010',
+  'email': 'bprogrammer@itbunny.es',
   'country': 'España',
-  'city': 'Valencia',
+  'city': 'Barcelona',
   'move': false,
   'modality': 'remota',
   'resumeeUrl': '',

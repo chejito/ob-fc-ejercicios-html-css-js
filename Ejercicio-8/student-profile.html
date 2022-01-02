@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha de Alumno</title>
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/student-profile.css" type="text/css">
+</head>
+<body>
+  <main>
+    <header>
+      <img src="images/bunny-profile.jpg" alt="Fotografía de perfil del alumno" class="profile-photo">
+    
+      <div class="title">
+        <p class="student-name">nombre alumno</p>
+        <p class="location">
+          <span class="material-icons-outlined">place</span>
+          <span class="location-city"></span>
+          <span class="location-separator"> | </span>
+          <span class="location-country"></span>
+        </p>
+      </div>
+    </header>
+    <form action="#">
+      <div class="field name-field">
+        <label for="name-input">Nombre y Apellidos</label>
+        <input type="text" class="name-input full-width" name="name-input">
+      </div>
+    
+      <div class="field phone-field">
+        <label for="phone-input">Nº Teléfono</label>
+        <input type="text" class="phone-input half-width" name="phone-input">
+      </div>
+    
+      <div class="field email-field">
+        <label for="email-input">Email</label>
+        <input type="text" class="email-input half-width" name="email-input">
+      </div>
+    
+      <div class="field country-field">
+        <label for="country-input">País</label>
+        <select class="country-input half-width" name="country-input" onchange="selectCountry()">
+          <option value="empty">---</option>
+        </select>
+      </div>
+    
+      <div class="field city-field">
+        <label for="city-input">Ciudad</label>
+        <select class="city-input half-width" name="city-input">
+          <option value="empty">---</option>
+        </select>
+      </div>
+    
+      <div class="field move-field">
+        <label for="move-input">Traslado</label>
+        <select class="move-input half-width" name="move-input">
+          <option value="true">Sí</option>
+          <option value="false">No</option>
+        </select>
+      </div>
+    
+      <div class="field modality-field">
+        <label for="modality-input">Presencialidad</label>
+        <select class="modality-input half-width" name="modality-input">
+          <option value="presencial">Presencial</option>
+          <option value="mixta">Mixta</option>
+          <option value="remota">En remoto</option>
+        </select>
+      </div>
+    
+      <div class="field resumee-field full-width">
+        <p class="resumee-label">Documento CV</p>
+        <div class="resumee-buttons">
+          <div class="upload-resumee">
+            <span class="material-icons-outlined">cloud_upload</span>
+            <p class="upload">Subir de nuevo</p>
+          </div>
+    
+          <div class="delete-resumee">
+            <span class="material-icons-outlined">delete</span>
+            <p class="delete">Borrar</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="field tags-field">
+        <label for="tags-input">Etiquetas</label>
+        <input type="text" list="tagnames" class="tags-input full-width" name="tags-input"
+          placeholder="Escribe para buscar...." onkeydown="addTag(event)">
+        <datalist id="tagnames" class="tagnames"></datalist>
+    
+        <div class="tags-display full-width"></div>
+      </div>
+    </form>
+  </main>
+  <aside>
+    <iframe src="files/itbunny_resumee.pdf" frameborder="0"></iframe>
+  </aside>
+  <script src="js/student-profile.js"></script>
+</body>
+</html>
