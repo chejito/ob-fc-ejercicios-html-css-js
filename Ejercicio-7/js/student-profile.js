@@ -104,7 +104,7 @@ const country = document.querySelector('.country-input')
 const countries = Object.keys(countryCities)
 const city = document.querySelector('.city-input')
 const tagInput = document.querySelector('.tagnames')
-const studentTags = student1.tags
+let studentTags = student1.tags
 const tagsDisplay = document.querySelector('.tags-display')
 
 tagList.forEach(x => {
@@ -166,32 +166,29 @@ const renderTags = () => {
   studentTags.forEach( x => {
 
     let newTag = document.createElement('span')
-    newTag.className = 'tag'
-    newTag.innerText = `${x}`
-
-    let newIcon = document.createElement('span')
-    newIcon.className = 'material-icons-outlined clickable'
-    newIcon.innerText = 'close'
-    newIcon.onclick = deleteTag(this)
-    newTag.appendChild(newIcon)
+    newTag.className = 'tag clickable'
+    newTag.innerHTML = `<span>${x}</span><span class="material-icons-outlined"
+    onclick="removeTag(this)">close</span>`   
     tagsDisplay.appendChild(newTag)
   })
 }
 
-const addTag = (e) => {
-  
+const addTag = (e) => { 
+
   if (e['key'] === 'Enter') {
-    let tagValue = document.querySelector('.tags-input').value
-    studentTags.push(tagValue)
-    document.querySelector('.tags-input').value = ''
-    renderTags()
-
-
+    let tagValue = document.querySelector('.tags-input').value.toLowerCase()
+    if (!studentTags.includes(tagValue)) {
+      studentTags.push(tagValue)
+      document.querySelector('.tags-input').value = ''
+      renderTags()
+    }      
   }  
 }
 
-const deleteTag = (tag) => {
-
+const removeTag = (icon) => {   
+  const tag = icon.parentNode.firstElementChild.innerText.toLowerCase()
+  studentTags = studentTags.filter(item => item !== tag)
+  renderTags()
 }
 
 loadStudent()

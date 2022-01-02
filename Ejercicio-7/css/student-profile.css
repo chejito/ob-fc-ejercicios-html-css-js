@@ -214,6 +214,13 @@ select,
   flex-wrap: wrap;
   justify-content: flex-start;
   align-content: flex-start;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.tags-display::-webkit-scrollbar {
+  display: none;
 }
 
 .tag {
