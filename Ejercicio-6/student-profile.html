@@ -19,9 +19,9 @@
       <p class="student-name">nombre alumno</p>
       <p class="location">
         <span class="material-icons-outlined">place</span>
-        <span class="location-city">Valencia</span>
+        <span class="location-city"></span>
         <span class="location-separator"> | </span> 
-        <span class="location-country">España</span>
+        <span class="location-country"></span>
       </p>
     </div>
   </header>
@@ -43,41 +43,32 @@
 
     <div class="field country-field">
       <label for="country-input">País</label>
-      <select class="country-input half-width" name="country-input">
-        <option value="españa">españa</option>
-        <option value="méxico">méxico</option>
-        <option value="argentina">argentina</option>
-        <option value="colombia">colombia</option>
+      <select class="country-input half-width" name="country-input" onchange="selectCountry()">
+        <option value="empty">---</option>
       </select>
     </div>
     
     <div class="field city-field">
       <label for="city-input">Ciudad</label>
       <select class="city-input half-width" name="city-input">
-        <option value="madrid">madrid</option>
-        <option value="barcelona">barcelona</option>
-        <option value="valencia">valencia</option>
-        <option value="sevilla">sevilla</option>
-        <option value="ciudad de méxico">ciudad de méxico</option>
-        <option value="buenos aires">buenos aires</option>
-        <option value="bogotá">bogotá</option>
+        <option value="empty">---</option>
       </select>
     </div>
     
     <div class="field move-field">
       <label for="move-input">Traslado</label>
       <select class="move-input half-width" name="move-input">
-        <option value="true">sí</option>
-        <option value="false">no</option>
+        <option value="true">Sí</option>
+        <option value="false">No</option>
       </select>    
     </div>
     
     <div class="field modality-field">
       <label for="modality-input">Presencialidad</label>
       <select class="modality-input half-width" name="modality-input">
-        <option value="presencial">presencial</option>
-        <option value="mixta">mixta</option>
-        <option value="remoto">en remoto</option>
+        <option value="presencial">Presencial</option>
+        <option value="mixta">Mixta</option>
+        <option value="remota">En remoto</option>
       </select>
     </div>     
       
@@ -108,22 +99,7 @@
           <option value="springboot">
         </datalist>      
 
-      <div class="tags-display full-width">
-        <span class="tag">
-          html&css
-          <span class="material-icons-outlined">close</span>
-        </span>        
-
-        <span class="tag">
-          angular
-          <span class="material-icons-outlined">close</span>
-        </span>
-
-        <span class="tag">
-          react
-          <span class="material-icons-outlined">close</span>
-        </span>
-      </div>
+      <div class="tags-display full-width"></div>
     </div>
   </form>
   <script src="js/student-profile.js"></script>

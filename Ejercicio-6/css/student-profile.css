@@ -138,7 +138,7 @@ select {
   border: none;
   font-size: 14px;
   font-weight: 500;
-  text-transform: capitalize;
+  padding-left: 15px;
 }
 
 input:focus,
@@ -191,9 +191,8 @@ select:focus {
   height: 138px;
 }
 
-
-input,
-select {
+select,
+.tags-input {
           appearance: none;
      -moz-appearance: none;
   -webkit-appearance: none;
