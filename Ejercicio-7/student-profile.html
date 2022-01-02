@@ -89,15 +89,9 @@
 
     <div class="field tags-field">
       <label for="tags-input">Etiquetas</label>
-      <input type="text" list="tagnames" class="tags-input full-width" name="tags-input">
-        <datalist id="tagnames">
-          <option value="react">
-          <option value="html&css">
-          <option value="angular">
-          <option value="javascript">
-          <option value="java">
-          <option value="springboot">
-        </datalist>      
+      <input type="text" list="tagnames" class="tags-input full-width" 
+      name="tags-input" placeholder="Escribe para buscar...."onkeydown="addTag(event)">
+        <datalist id="tagnames" class="tagnames"></datalist>      
 
       <div class="tags-display full-width"></div>
     </div>

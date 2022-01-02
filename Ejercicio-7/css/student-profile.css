@@ -191,6 +191,10 @@ select:focus {
   height: 138px;
 }
 
+.tags-field label {
+  margin-bottom: 15px;
+}
+
 select,
 .tags-input {
           appearance: none;
@@ -200,6 +204,7 @@ select,
   background-repeat: no-repeat;
   background-position-x: 100%;
   background-position-y: center;
+  cursor: pointer;
 }
 
 .tags-display {
@@ -230,4 +235,8 @@ select,
   font-size: 14px;
   margin-left: 8px;
   color: var(--secondary-font-color);
+}
+
+.clickable {
+  cursor: pointer;
 }

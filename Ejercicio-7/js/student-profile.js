@@ -66,9 +66,53 @@ const countryCities = {
   ]
 }
 
+const tagList = [
+  'html&css',
+  'javascript', 
+  'react', 
+  'angular', 
+  'typescript',
+  'java', 
+  'hibernate',
+  'springboot', 
+  'junit',
+  'c#', 
+  'php',
+  'laravel',
+  'simfony',
+  'python',
+  'django',
+  'flask',
+  'fastapi',
+  'git',
+  'github',
+  'docker',
+  'android',
+  'kotlin',
+  'ios',
+  'swift',
+  'dart',
+  'flutter',
+  'scala',
+  'ionic',
+  'vue',
+  'nodejs',
+  'xamarin'
+]
+
 const country = document.querySelector('.country-input')
 const countries = Object.keys(countryCities)
 const city = document.querySelector('.city-input')
+const tagInput = document.querySelector('.tagnames')
+const studentTags = student1.tags
+const tagsDisplay = document.querySelector('.tags-display')
+
+tagList.forEach(x => {
+  let newOption = document.createElement('option')
+  newOption.value = x
+  newOption.text = x
+  tagInput.appendChild(newOption)
+})
 
 countries.forEach(x => {
   let newOption = document.createElement('option')
@@ -112,22 +156,42 @@ const loadStudent = (student = student1) => {
   
   document.querySelector('.city-input').value = student.city
   document.querySelector('.move-input').value = student.move
-  document.querySelector('.modality-input').value = student.modality
+  document.querySelector('.modality-input').value = student.modality  
+  renderTags()
+}
 
-  const tagsDisplay = document.querySelector('.tags-display')
-  student.tags.forEach( x => {
+const renderTags = () => {
+  tagsDisplay.innerHTML = ''
+  
+  studentTags.forEach( x => {
 
     let newTag = document.createElement('span')
     newTag.className = 'tag'
     newTag.innerText = `${x}`
 
     let newIcon = document.createElement('span')
-    newIcon.className = 'material-icons-outlined'
+    newIcon.className = 'material-icons-outlined clickable'
     newIcon.innerText = 'close'
-    
+    newIcon.onclick = deleteTag(this)
     newTag.appendChild(newIcon)
     tagsDisplay.appendChild(newTag)
   })
+}
+
+const addTag = (e) => {
+  
+  if (e['key'] === 'Enter') {
+    let tagValue = document.querySelector('.tags-input').value
+    studentTags.push(tagValue)
+    document.querySelector('.tags-input').value = ''
+    renderTags()
+
+
+  }  
+}
+
+const deleteTag = (tag) => {
+
 }
 
 loadStudent()
