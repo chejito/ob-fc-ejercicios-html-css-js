@@ -574,7 +574,65 @@ Body:
 Caso afirmativo:
 ```json
 {
-    "message": "Listado de alumnos con posibilidad de traslado: 'false'",
+    "message": "Listado de alumnos con ciudad 'barcelona', presencialidad 'remota' y posibilidad de traslado 'false'",
+    "students": [
+        {
+            "fullName": "ITBunny Programmer",
+            "phoneNumber": "+34 567 890 010",
+            "email": "bprogrammer@itbunny.es",
+            "country": "España",
+            "city": "Barcelona",
+            "move": false,
+            "modality": "remota",
+            "resumeeUrl": "",
+            "photoUrl": "",
+            "tags": [ 
+                "react",
+                "html&css",
+                "javascript",
+                "java",
+                "springboot",
+                "hibernate"
+            ]
+        }
+    ] 
+} 
+```
+Caso negativo:
+```json
+{
+    "message": "Error: xxxxx"
+} 
+```
+#### 3.7 Filtro por ciudad, presencialidad, posibilidad de traslado y etiquetas
+Método: 
+```
+GET
+```
+Endpoint:
+```
+../api/students/filter/all
+```
+
+Body:
+```json
+{
+    "token": "$ab$123$gnzxjgfñzjgmnzlxkfgmñzk",
+    "country": "españa",
+    "city": "barcelona",
+    "modality": "remota",
+    "move": false,
+    "tags": [
+        "javascript",
+        "react"
+    ]
+}
+```
+Caso afirmativo:
+```json
+{
+    "message": "Listado de alumnos con ciudad 'barcelona', presencialidad 'remota', posibilidad de traslado 'false' y etiquetas: 'javascript',
+        'react'",
     "students": [
         {
             "fullName": "ITBunny Programmer",
