@@ -7,6 +7,7 @@
   --secondary-font-color: #a5a8b3;
   --border-color: #e6e6ea;
   --username-color: #515561;
+  --location-icon-color: #8c909c
 }
 
 * {
@@ -14,12 +15,13 @@
 }
 
 html, 
-body {
+body,
+p {
   margin: 0;  
 }
 
 html {
-  background: #121625;
+  background: var(--main-bg-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,6 +40,7 @@ body {
   font-size: 14px;
   font-weight: 500;
   font-feature-settings: 'pnum' on, 'lnum' on;
+  border: 1px solid var(--border-color);
   border-radius: 20px;
 }
 
@@ -48,21 +51,45 @@ header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 48px;
-
-  border: 1px solid red;
 }
 
 .profile-photo {
   width: 90px;
-
-  border: 1px solid green;
+  border-radius: 20px;
+  outline: 4px solid var(--border-color);
 }
 
 .title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   width: 338px;
-  margin: 18.5px 0 20.5px;
+}
 
-  border: 1px solid purple;
+.student-name {
+  font-size: 24px;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.location {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--secondary-font-color);
+}
+
+.location .material-icons-outlined {
+  vertical-align: middle;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--location-icon-color);
+  padding-right: 7px;
+}
+
+.location-city,
+.location-separator {
+  padding-right: 7px;
 }
 
 /* Form */
@@ -70,7 +97,138 @@ header {
 form {
   height: 598px;
   width: 452px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  margin: 0;
+  padding: 0;
+}
 
-  border: 1px solid blue;
+.field {
+  height: 68px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+}
 
+.field label,
+.resumee-label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.full-width {
+  width: 450px;
+}
+
+.half-width {
+  width: 213px;
+}
+
+input,
+select {
+  height: 40px;
+  background: var(--main-bg-color);
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+}
+
+.resumee-buttons {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.resumee-buttons .material-icons-outlined {
+  vertical-align: middle;
+  font-size: 18px;
+  padding-right: 12px;
+}
+
+.upload-resumee,
+.delete-resumee {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;  
+}
+
+.upload-resumee {
+  height: 100%;
+  width: 163px;
+  background: var(--secondary-font-color);
+  margin-right: 10px;
+  color: var(--secondary-bg-color);
+  border: none;
+}
+
+.delete-resumee {
+  height: 100%;
+  width: 101px;
+  border: 1px solid var(--border-color);
+  color: var(--primary-font-color);
+}
+
+.tags-field {
+  height: 138px;
+}
+
+
+input,
+select {
+          appearance: none;
+     -moz-appearance: none;
+  -webkit-appearance: none;
+  background-image: url("../images/expand_more_black_18dp.svg");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: center;
+}
+
+.tags-display {
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+.tag {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: var(--border-color);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  margin: 8px 6px 0 0;
+}
+
+.tag .material-icons-outlined {
+  font-size: 14px;
+  margin-left: 8px;
+  color: var(--secondary-font-color);
 }
