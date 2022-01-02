@@ -7,11 +7,14 @@ const student1 = {
   'move': false,
   'modality': 'remota',
   'resumeeUrl': '',
+  'photoUrl': '',
   'tags': [    
-    'angular',
     'react',
     'html&css',
-    'javascript'
+    'javascript',
+    'java',
+    'springboot',
+    'hibernate'
   ]
 }
 

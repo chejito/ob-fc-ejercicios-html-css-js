@@ -11,7 +11,7 @@ POST
 
 Endpoint:
 ```
-../api/auth/register
+../api/users/register
 ```
 
 Body:
@@ -42,7 +42,7 @@ POST
 ```
 Endpoint:
 ```
-../api/auth/login
+../api/users/login
 ```
 
 Body:
@@ -65,5 +65,269 @@ Caso negativo:
     "message": "Usuario no autenticado. Error: xxxxx"
 } 
 ```
-### 2. Página de Tabla de Alumnos
-#### 2.1 Listar Alumnos
+### 2. Páginas de Tabla de Alumnos/Perfil de Alumno
+#### 2.1 Listado de todos los Alumnos
+Método: 
+```
+GET
+```
+Endpoint:
+```
+../api/students
+```
+
+Body:
+```json
+{
+    "token": "$ab$123$gnzxjgfñzjgmnzlxkfgmñzk"
+}
+```
+Caso afirmativo:
+```json
+{
+    "message": "Listado de alumnos",
+    "students": [
+        {
+            "fullName": "ITBunny Programmer",
+            "phoneNumber": "+34 567 890 010",
+            "email": "bprogrammer@itbunny.es",
+            "country": "España",
+            "city": "Barcelona",
+            "move": false,
+            "modality": "remota",
+            "resumeeUrl": "",
+            "photoUrl": "",
+            "tags": [ 
+                "react",
+                "html&css",
+                "javascript",
+                "java",
+                "springboot",
+                "hibernate"
+            ]
+        },
+        {
+            "fullName": "Amparo Herrera Climent",
+            "phoneNumber": "+34 654 85 52 48",
+            "email": "hcliment@gmail.com",
+            "country": "España",
+            "city": "Valencia",
+            "move": true,
+            "modality": "presencial",
+            "resumeeUrl": "",
+            "photoUrl": "",
+            "tags": [    
+                "angular",
+                "react",
+                "html&css",
+                "javascript"
+            ]
+        }
+    ] 
+} 
+```
+Caso negativo:
+```json
+{
+    "message": "Error: xxxxx"
+} 
+```
+#### 2.2 Obtención de un Alumno
+Método: 
+```
+GET
+```
+Endpoint:
+```
+../api/students/{fullName}
+```
+
+Body:
+```json
+{
+    "token": "$ab$123$gnzxjgfñzjgmnzlxkfgmñzk"
+}
+```
+Caso afirmativo:
+```json
+{
+    "message": "Alumno: 'ITBunny Programmer'",
+    "student": {
+        "fullName": "ITBunny Programmer",
+        "phoneNumber": "+34 567 890 010",
+        "email": "bprogrammer@itbunny.es",
+        "country": "España",
+        "city": "Barcelona",
+        "move": false,
+        "modality": "remota",
+        "resumeeUrl": "",
+        "photoUrl": "",
+        "tags": [ 
+            "react",
+            "html&css",
+            "javascript",
+            "java",
+            "springboot",
+            "hibernate"
+        ]
+    }
+} 
+```
+Caso negativo:
+```json
+{
+    "message": "Error: xxxxx"
+} 
+```
+#### 2.3 Creación de un Alumno
+Método: 
+```
+POST
+```
+Endpoint:
+```
+../api/students
+```
+
+Body:
+```json
+{
+    "token": "$ab$123$gnzxjgfñzjgmnzlxkfgmñzk",
+    "student": {
+            "fullName": "ITBunny Programmer",
+            "phoneNumber": "+34 567 890 010",
+            "email": "bprogrammer@itbunny.es",
+            "country": "España",
+            "city": "Barcelona",
+            "move": false,
+            "modality": "remota",
+            "resumeeUrl": "",
+            "photoUrl": "",
+            "tags": [ 
+                "react",
+                "html&css",
+                "javascript",
+                "java",
+                "springboot",
+                "hibernate"
+            ]
+        }
+}
+```
+Caso afirmativo:
+```json
+{
+    "message": "Alumno creado correctamente: 'ITBunny Programmer'"
+} 
+```
+Caso negativo:
+```json
+{
+    "message": "Error: xxxxx"
+} 
+```
+#### 2.4 Modificación de un Alumno
+Método: 
+```
+PUT
+```
+Endpoint:
+```
+../api/students
+```
+
+Body:
+```json
+{
+    "token": "$ab$123$gnzxjgfñzjgmnzlxkfgmñzk",
+    "student": {
+            "fullName": "ITBunny Programmer",
+            "phoneNumber": "+34 567 890 010",
+            "email": "bprogrammer@itbunny.es",
+            "country": "España",
+            "city": "Barcelona",
+            "move": false,
+            "modality": "remota",
+            "resumeeUrl": "https://my-cool-it-resumee.io",
+            "photoUrl": "https://my-cool-profile-photo.com/photo.jpg",
+            "tags": [ 
+                "react",
+                "html&css",
+                "javascript",
+                "java",
+                "springboot",
+                "hibernate",
+                "php",
+                "python"
+            ]
+        }
+}
+```
+Caso afirmativo:
+```json
+{
+    "message": "Alumno modificado correctamente: 'ITBunny Programmer'"
+} 
+```
+Caso negativo:
+```json
+{
+    "message": "Error: xxxxx"
+} 
+```
+#### 2.5 Eliminación de un Alumno
+Método: 
+```
+DELETE
+```
+Endpoint:
+```
+../api/students/{fullName}
+```
+
+Body:
+```json
+{
+    "token": "$ab$123$gnzxjgfñzjgmnzlxkfgmñzk"
+}
+```
+Caso afirmativo:
+```json
+{
+    "message": "Alumno eliminado correctamente: 'ITBunny Programmer'"
+} 
+```
+Caso negativo:
+```json
+{
+    "message": "Error: xxxxx"
+} 
+```
+#### 2.5 Eliminación de todos los Alumnos
+Método: 
+```
+DELETE
+```
+Endpoint:
+```
+../api/students
+```
+
+Body:
+```json
+{
+    "token": "$ab$123$gnzxjgfñzjgmnzlxkfgmñzk"
+}
+```
+Caso afirmativo:
+```json
+{
+    "message": "Alumnos eliminados correctamente"
+} 
+```
+Caso negativo:
+```json
+{
+    "message": "Error: xxxxx"
+} 
+```
