@@ -631,8 +631,7 @@ Body:
 Caso afirmativo:
 ```json
 {
-    "message": "Listado de alumnos con ciudad 'barcelona', presencialidad 'remota', posibilidad de traslado 'false' y etiquetas: 'javascript',
-        'react'",
+    "message": "Listado de alumnos con ciudad 'barcelona', presencialidad 'remota', posibilidad de traslado 'false' y etiquetas: 'javascript', 'react'",
     "students": [
         {
             "fullName": "ITBunny Programmer",
